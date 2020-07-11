@@ -1,0 +1,15 @@
+package com.zt.lock;
+
+public class test {
+
+	public static void main(String args) throws InterruptedException {
+		Thread t1 = new Thread(new AddToList(0));
+		Thread t2 = new Thread(new AddToList(1));
+		t1.start();
+		t2.start();
+		while (t1.isAlive() || t2.isAlive()) {
+			Thread.sleep(1);
+		}
+		System.out.println(numberList.size());
+	}
+}

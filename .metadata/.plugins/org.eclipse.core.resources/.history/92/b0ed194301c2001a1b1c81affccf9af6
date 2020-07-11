@@ -1,0 +1,23 @@
+========================
+轻量级锁
+------------------------
+-嵌入在线程栈中的对象
+BasicObjectLock
+1.BasicLock    markOop_displaced_header 存放的主要的内容就是displaced_header对象头
+2.ptr to obj hold the lock 指向持有锁的对象的指针
+========================
+轻量级锁
+------------------------
+■ 普通的锁处理性能不够理想,轻量级锁是一种快速的锁定方法。
+■如果对象没有被锁定
+- 将对象头的Mark指针保存到锁对象中
+- 将对象头设置为指向锁的指针（在线程栈空间中）
+lock->set_displaced_header(mark);
+if(mark ==(markOop) Atomic::cmpxchg_ptr(lock,obj()->mark_addr(),mark))
+{
+TEVENT(slow_enter: release stacklock);
+return;
+}
+lock位于线程中
+
+========================

@@ -1,0 +1,10 @@
+========================
+轻量级锁
+------------------------
+-嵌入在线程栈中的对象
+BasicObjectLock
+1.BasicLock    markOop_displaced_header 存放的主要的内容就是displaced_header对象头
+2.ptr to obj hold the lock
+========================
+
+========================

@@ -1,0 +1,10 @@
+package com.zt.lock;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Constant {
+
+	public static List<Integer> numberList = new ArrayList<Integer>();
+	
+}

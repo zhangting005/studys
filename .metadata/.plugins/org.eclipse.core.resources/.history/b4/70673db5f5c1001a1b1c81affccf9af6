@@ -1,0 +1,28 @@
+package com.zt.lock;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class threads{
+	
+}
+
+public static class AddToList implements Runnable {
+	static List<Integer> numberList = new ArrayList<Integer>();
+	int startnum = 0;
+
+	public threads(int startnumber) {
+		startnum = startnumber;
+	}
+
+	@Override
+	public void run() {
+		int count = 0;
+		while (count < 1000000) {
+			numberList.add(startnum);
+			startnum += 2;
+			count++;
+		}
+	}
+
+}
