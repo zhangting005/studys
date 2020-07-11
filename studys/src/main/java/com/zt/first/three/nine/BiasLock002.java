@@ -1,4 +1,4 @@
-package com.zt.lock;
+package com.zt.first.three.nine;
 
 /**
  * 偏向锁
