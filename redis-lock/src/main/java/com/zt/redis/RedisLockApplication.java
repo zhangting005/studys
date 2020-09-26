@@ -14,6 +14,7 @@ public class RedisLockApplication {
 		SpringApplication.run(RedisLockApplication.class, args);
 	}
 	
+	//初始化redis客户端
 	@Bean
     Redisson redissonSingle() {
         Config config = new Config();

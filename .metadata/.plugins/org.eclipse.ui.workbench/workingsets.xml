@@ -30,13 +30,18 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/rabbitmq-quartz-demo" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/entity" type="4"/>
 </workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1601105845121_10" label="study" name="study">
+<item elementID="=redis-lock" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=studys" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=SyncInDetail" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594305574115_2" label="Window Working Set" name="Aggregate for window 1594305574115"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594443497481_3" label="Window Working Set" name="Aggregate for window 1594443497477"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594445135130_4" label="Window Working Set" name="Aggregate for window 1594445135130"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594530015688_5" label="Window Working Set" name="Aggregate for window 1594530015688"/>
+<mruList name="study"/>
 <mruList name="rabbitmq-quartz-demo"/>
 <mruList name="springboot-quartz"/>
 <mruList name="Java Test Sources"/>
 <mruList name="dubbo"/>
-<mruList name="taotao-manager"/>
 </workingSetManager>
