@@ -72,9 +72,9 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594443497481_3" label="Window Working Set" name="Aggregate for window 1594443497477"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594445135130_4" label="Window Working Set" name="Aggregate for window 1594445135130"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594530015688_5" label="Window Working Set" name="Aggregate for window 1594530015688"/>
+<mruList name="springboot-quartz"/>
+<mruList name="dubbo"/>
+<mruList name="rabbitmq-quartz-demo"/>
 <mruList name="taxi"/>
 <mruList name="study"/>
-<mruList name="rabbitmq-quartz-demo"/>
-<mruList name="dubbo"/>
-<mruList name="springboot-quartz"/>
 </workingSetManager>
