@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="  
+            http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context  
+                http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/rabbit  
+                http://www.springframework.org/schema/rabbit/spring-rabbit-1.4.xsd">
+
+    <!-- 配置读取外部配置文件 -->
+	<context:property-placeholder location="classpath:application.properties" />
+	
+	<!-- 创建连接工厂 -->
+	<rabbit:connection-factory id="rabbitConnectionFactory"
+		host="${mq.host}" port="${mq.port}" username="${mq.username}"
+		password="${mq.password}" />
+
+    <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->  
+	<rabbit:admin connection-factory="rabbitConnectionFactory" />
+
+	<!-- RabbitMQ Template -->
+	<rabbit:template id="rabbitAmqpTemplate"
+		connection-factory="rabbitConnectionFactory" exchange="${mq.queue}_exchange"
+		routing-key="30000" />
+ 
+</beans>

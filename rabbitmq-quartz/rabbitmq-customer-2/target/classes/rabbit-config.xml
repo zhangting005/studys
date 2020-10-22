@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="  
+            http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context  
+                http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/rabbit  
+                http://www.springframework.org/schema/rabbit/spring-rabbit-1.4.xsd">
+
+    <!-- 配置读取外部配置文件 -->
+	<context:property-placeholder location="classpath:application.properties" />
+	
+	<!-- 创建连接工厂 -->
+	<rabbit:connection-factory id="rabbitConnectionFactory"
+		host="${mq.host}" port="${mq.port}" username="${mq.username}"
+		password="${mq.password}" />
+
+    <!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->  
+	<rabbit:admin connection-factory="rabbitConnectionFactory" />
+
+
+	<!-- 生产者队列 durable：是否持久化 ,
+	            exclusive：仅创建者可以使用的私有队列，
+	            auto-delete：当所有消费端连接断开后，是否自动删除队列 -->
+	<rabbit:queue id="test_queue" name="${mq.queue}_testQueue_2" durable="true" auto-delete="false" exclusive="false">
+	 	<rabbit:queue-arguments>
+	 				<entry key="x-message-ttl">   <!-- 设置消息的默认保存时间 -->
+	 				    <value type="java.lang.Long">60000</value>
+	 				</entry>
+	 		</rabbit:queue-arguments>
+	</rabbit:queue>
+
+    <!-- RabbitMQ exchange -->
+	<rabbit:topic-exchange name="${mq.queue}_exchange"
+		durable="true" auto-delete="false">
+		<rabbit:bindings>
+			<rabbit:binding queue="test_queue" pattern="${mq.queue}_patt_2" />
+		</rabbit:bindings>
+	</rabbit:topic-exchange>
+	
+    <!-- 消费者 -->
+	<bean name="rabbitCumstomerListener" class="com.sl.jms.listener.RabbitCumstomerListener"/>
+
+	<!-- 配置监听 -->
+    <rabbit:listener-container
+		connection-factory="rabbitConnectionFactory" acknowledge="manual">
+		<!-- queues 监听队列，多个用逗号分隔 ref 监听器 -->
+		<rabbit:listener queues="test_queue" ref="rabbitCumstomerListener" />
+	</rabbit:listener-container>
+	
+	
+</beans>
