@@ -31,8 +31,8 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/entity" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1601105845121_10" label="study" name="study">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/redis-lock" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/studys" type="4"/>
+<item elementID="=redis-lock" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=studys" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SyncInDetail" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1601885055297_11" label="taxi" name="taxi">
@@ -72,9 +72,9 @@
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594443497481_3" label="Window Working Set" name="Aggregate for window 1594443497477"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594445135130_4" label="Window Working Set" name="Aggregate for window 1594445135130"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1594530015688_5" label="Window Working Set" name="Aggregate for window 1594530015688"/>
-<mruList name="springboot-quartz"/>
-<mruList name="dubbo"/>
-<mruList name="rabbitmq-quartz-demo"/>
 <mruList name="taxi"/>
+<mruList name="springboot-quartz"/>
+<mruList name="rabbitmq-quartz-demo"/>
+<mruList name="dubbo"/>
 <mruList name="study"/>
 </workingSetManager>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 场景：秒杀的时候
  * redis分布式锁递进优化：deductStock - > deductStock4
  * @author lenovo
  *
